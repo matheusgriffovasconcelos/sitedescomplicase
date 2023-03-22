@@ -1,0 +1,17 @@
+@model FornecedorModel
+
+<div class="container p-3" style="height: 100vh">
+    <h2 class="text-danger">Exclusão de Fornecedor</h2>
+    <hr>
+    <p class="lead"><b>Código</b>: @Model.Id</p>
+    <p class="lead"><b>Nome</b>: @Model.Nome</p>
+    <p class="lead text-bg-danger">Deseja realmente excluir o fornecedor <span class="text-info"><u>@Model.Nome</u></span>?</p>
+    <form method="post" asp-action="ProcessarExclusao">
+        <input type="hidden" asp-for="@Model.Id">
+        <p class="">
+            <a asp-action="Index" class="btn btn-sm btn-secondary">Não</a>
+            <input type="submit" class="btn btn-sm btn-danger" value="Sim">
+        </p>
+    </form>
+</div>
+

@@ -1,0 +1,82 @@
+@model LoginViewModel
+
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    <div class="container p-3">
+        <div class="container mt-3">
+            <p class="display-4 text-center text-danger opacity-50">Faça seu orçamento descomplicado! ;&rpar;</p>
+        </div>
+
+        <div class="p-5 text-center bg-image" style="
+      background-image: url('/img/fundo.jpeg'); background-repeat: round;
+    ">
+            <div class="mask">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="mt-4">
+                        <h1 class="mb-3 text-danger opacity-50">Orçamentos Descomplicase</h1>
+                        <h4 class="mb-3 text-dark mb-5">faça seu orçamento em poucos cliques.</h4>
+                        <p class="col-6 text-center mx-auto lead text-bg-dark bg-opacity-50">Clique no botão abaixo.</p>
+                        <a class="btn btn-outline-dark btn-lg" asp-controller="Orcamento" asp-action="Index" role="button">Calcular</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="ads">
+                    <div class="carousel-indicators">
+                        <button class="active" data-bs-target="#ads" data-bs-slide-to="0"></button>
+                        <button class="" data-bs-target="#ads" data-bs-slide-to="1"></button>
+                        <button class="" data-bs-target="#ads" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="1000">
+                            <img src="/img/c2.jpg" alt="" class="d-block w-100">
+                            <div class="carousel-caption">
+                                <h5 class="text-bg-danger opacity-50 display-5 ">Seu</h5>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item" data-bs-interval="1000">
+                            <img src="/img/c4.jpg" alt="" class="d-block w-100">
+                            <div class="carousel-caption">
+                                <h5 class="text-bg-danger opacity-50 display-5 ">Casamento</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="1000">
+                            <img src="/img/fundo.jpeg" alt="" class="d-block w-100">
+                            <div class="carousel-caption">
+                                <h3 class="text-bg-danger opacity-50 display-5 ">Descomplicado!</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                    @* <div>
+                        <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </button>
+                        </div> *@
+                </div>
+            </div>
+            <div class="col-12" style="height: 100vh;">
+                <div class="container text-center mt-2 p-3">
+                    <h3 class="text-danger display-6 mt-0">Amor e tecnologia transformando os casamentos</h3>
+                    <p>Trabalhamos para realizar o sonho dos casais, cuidando com carinho de cada uma deles.
+
+                        Confira no menu acima, as principais funcionalidades disponíveis para o orçamento do seu dia especial. Nós cuidaremos de tudo para vocês.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
