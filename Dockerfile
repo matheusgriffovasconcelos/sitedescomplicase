@@ -22,6 +22,10 @@ RUN dotnet publish "DescomplicaseApp.csproj" -c Release -o /app --no-restore
 #imagem do .NET Core 6 Runtime para Ubuntu 20.04
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal AS runtime
 #define o diretório de trabalho
+
+# ENV ASPNETCORE_HTTP_PORT: "https://+:5001"
+# ENV ASPNETCORE_URLS: "http://+:5000"
+
 WORKDIR /app
 #copia os arquivos do diretório /app da imagem de compilação
 #para o diretório de trabalho da imagem de produção

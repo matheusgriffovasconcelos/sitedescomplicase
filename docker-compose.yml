@@ -1,12 +1,14 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  meuProjeto:
-    image: descomplicaseapp
-    build:
-      context: .
-      dockerfile: Dockerfile
+  app:
+    build: .
+    container_name: app_dotnet
     ports:
-      - "5000:80"
+      - 5000:5000
+      - 5001:5001
+    volumes:
+      - ./:/App
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      ASPNETCORE_HTTP_PORT: "https://+:5001"
+      ASPNETCORE_URLS: "http://+:5000"
