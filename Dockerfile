@@ -30,6 +30,7 @@ COPY --from=build /app ./
 COPY --from=build /source/descomplicase.db ./
 #expõe a porta 5000 para o aplicativo
 EXPOSE 5000
+EXPOSE 5001
 ENV ASPNETCORE_HTTP_PORT: "https://+:5001"
 ENV ASPNETCORE_URLS: "http://+:5000"
 #executa o aplicativo
