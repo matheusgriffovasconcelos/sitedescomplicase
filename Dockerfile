@@ -29,7 +29,9 @@ COPY --from=build /app ./
 #copia o arquivo do banco de dados para o diretório de trabalho
 COPY --from=build /source/descomplicase.db ./
 #expõe a porta 5000 para o aplicativo
-# EXPOSE 5000
+EXPOSE 5000
+ENV ASPNETCORE_HTTP_PORT: "https://+:5001"
+ENV ASPNETCORE_URLS: "http://+:5000"
 #executa o aplicativo
 ENTRYPOINT ["dotnet", "DescomplicaseApp.dll"]
 
